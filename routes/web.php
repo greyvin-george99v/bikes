@@ -37,8 +37,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['admin','auth']], function(){
     Route::put('/role-update/{id}',[AdminController::class, 'registerupdate'])->name('admin.registerupdate');
 
 
-    // Route::get('edit'[AdminController::class,'edit'])->name('admin.edit');
-
+   //Route Admin Profile
     Route::post('update-profile-info',[AdminController::class,'updateInfo'])->name('adminUpdateInfo');
     Route::post('change-profile-picture',[AdminController::class,'updatePicture'])->name('adminPictureUpdate');
     Route::post('change-password',[AdminController::class,'changePassword'])->name('adminChangePassword');
@@ -49,6 +48,11 @@ Route::group(['prefix'=>'user', 'middleware'=>['user','auth']], function(){
     Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
     Route::get('profile',[UserController::class,'profile'])->name('user.profile');
     Route::get('settings',[UserController::class,'settings'])->name('user.settings');
+
+    //Route User Profile
+    Route::post('update-profile-info',[UserController::class,'updateInfo'])->name('userUpdateInfo');
+    Route::post('change-profile-picture',[UserController::class,'updatePicture'])->name('userPictureUpdate');
+    Route::post('change-password',[UserController::class,'changePassword'])->name('userChangePassword');
     
 });
 

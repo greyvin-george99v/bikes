@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin  ;
-
+namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
 
@@ -80,7 +79,7 @@ class AdminController extends Controller
        }
 
        function updatePicture(Request $request){
-           $path = 'usersImg/images/';
+           $path = 'users/images/';
            $file = $request->file('admin_image');
            $new_name = 'UIMG_'.date('Ymd').uniqid().'.jpg';
 
