@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'picture',
     ];
 
     /**
@@ -52,6 +53,14 @@ public function scopeUserr($query)
 {
      return $query->where('name',Auth::user()->id);
 
+}
+
+public function getPictureAttribute($value){
+    if($value){
+        return asset('users/images/'.$value);
+    }else{
+        return asset('users/images/no-image.png');
+    }
 }
 
 }
