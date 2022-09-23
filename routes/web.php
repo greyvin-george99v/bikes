@@ -4,7 +4,9 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserController;
+// use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\HomeController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,19 +20,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route Sites
-Route::get('/',[HomeController::class ,'index'])->name('home');
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::group(['prefix'=>'admin', 'middleware'=>['admin','auth']], function(){
-    Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::get('/',[AdminController::class,'index'])->name('admin.dashboard');
     Route::get('profile',[AdminController::class,'profile'])->name('admin.profile');
     Route::get('/users',[AdminController::class,'users'])->name('admin.users');
     Route::get('/edit/{id}',[AdminController::class,'edit'])->name('admin.edit');  
@@ -38,7 +40,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>['admin','auth']], function(){
     Route::put('/role-update/{id}',[AdminController::class, 'registerupdate'])->name('admin.registerupdate');
 
 
-   //Route Admin Profile
+    // Route::get('edit'[AdminController::class,'edit'])->name('admin.edit');
+
     Route::post('update-profile-info',[AdminController::class,'updateInfo'])->name('adminUpdateInfo');
     Route::post('change-profile-picture',[AdminController::class,'updatePicture'])->name('adminPictureUpdate');
     Route::post('change-password',[AdminController::class,'changePassword'])->name('adminChangePassword');
@@ -48,9 +51,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>['admin','auth']], function(){
 Route::group(['prefix'=>'user', 'middleware'=>['user','auth']], function(){
     Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
     Route::get('profile',[UserController::class,'profile'])->name('user.profile');
-    Route::get('settings',[UserController::class,'settings'])->name('user.settings');
+    Route::get('shipping',[UserController::class,'shipping'])->name('user.shipping');
+    Route::get('order',[UserController::class,'order'])->name('user.order');
 
-    //Route User Profile
+
     Route::post('update-profile-info',[UserController::class,'updateInfo'])->name('userUpdateInfo');
     Route::post('change-profile-picture',[UserController::class,'updatePicture'])->name('userPictureUpdate');
     Route::post('change-password',[UserController::class,'changePassword'])->name('userChangePassword');

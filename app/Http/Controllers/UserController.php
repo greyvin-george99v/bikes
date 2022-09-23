@@ -3,7 +3,8 @@
 // namespace App\Http\Controllers\Admin;
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\UserController;
+// use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -18,8 +19,11 @@ class UserController extends Controller
    function profile(){
        return view('user.profile');
    }
-   function settings(){
-       return view('user.settings');
+   function shipping(){
+       return view('user.shipping');
+   }
+   function order(){
+    return view('user.order');
    }
 
    function updateInfo(Request $request){

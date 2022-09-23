@@ -91,10 +91,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
           <li class="nav-item">
-            <a href="{{ route('user.settings')}}" class="nav-link {{ (request()->is('user/settings*')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-cog"></i>
+            <a href="{{ route('user.shipping')}}" class="nav-link {{ (request()->is('user/shipping*')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-info-circle"></i>
               <p>
-              Settings
+              Order Details
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('user.order')}}" class="nav-link {{ (request()->is('user/order*')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+              Your order
               </p>
             </a>
           </li>
@@ -125,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      Don't Just Ride, Cycle.
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2022 <a href="https://adminlte.io">Wheels On Bike</a>.</strong> All rights reserved.

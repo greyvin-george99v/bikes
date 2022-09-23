@@ -92,7 +92,7 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="change_password">
-                        <form class="form-horizontal" action="{{ route('adminChangePassword') }}" method="POST" id="changePasswordAdminForm">
+                        <form class="form-horizontal" action="{{ route('userChangePassword') }}" method="POST" id="changePasswordAdminForm">
                           <div class="form-group row">
                             <label for="inputName" class="col-sm-2 col-form-label">Old Passord</label>
                             <div class="col-sm-10">
