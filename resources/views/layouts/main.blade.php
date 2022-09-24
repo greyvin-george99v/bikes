@@ -16,35 +16,73 @@
     <title>Wheels on Bike</title>
 </head>
 <body>
-<!-- <div class="top">
-  <div class="logo">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+<div class="hero">
+<nav class="primary-navigation">
+<div class="logo">
     <a href="#" class="logo"><img src="img/wblogo.png" alt=""></a> 
-    <div class="button-container">
+    
+  </div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Bikes &dtrif;</a>
+      <ul class="dropdown">
+        <li><a href="#">Men Bikes</a></li>
+        <li><a href="#">Women Bikes</a></li>
+        <li><a href="#">Kids Bikes</a></li>
+        <li><a href="#">Iconography</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Work &dtrif;</a>
+      <ul class="dropdown">
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Web Design</a></li>
+        <li><a href="#">Illustration</a></li>
+        <li><a href="#">Iconography</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+ <div class="btn-1">
       <button class="button button-1">Login</button>
-    </div>
+      <button class="button button-1">Signup</button>
 </div>
-</div> -->
-      <!-- <button class="button button-1">Register</button> -->
-     
+</nav>
+</div>
 
-<section style="background-image: url(img/img4.png);">   
+
+     
+<section style="background-image: url(img/img4.png);">
+
     <div class="circle"></div> 
         <div class="content">
          <div class="textbox">
-            <h2>It's not just Riding,<br>It's <span>Cycling</span></h2>
-            <p>Start your journey today through the Mountains, Rivers, Hills, 
-                Streets and Towns using the right cycling Tools and Gears.</p>
+            <h2>Don't just ride<br>It's <span>Cycle</span></h2>
+            <p>Start your journey today through the Mountains, Rivers,<br> Hills, 
+                Streets and Towns using the right cycling Tools <br> and Gears.</p>
             <a href="#">Sign Up</a>
         </div>    
             <div class="imgBox">
-            <img src="img/img1.png" alt="wheels">
+            <img src="img/img1.png" class="wheels">
         </div>
         </div>
-        <!-- <ul class="thumb">
+        <ul class="thumb">
             <li><img src="img/thumb1.png" onclick="imgSlider('img/img1.png');changeCircleColor('#8d2108')"></li>
             <li><img src="img/thumb2.png" onclick="imgSlider('img/img2.png');changeCircleColor('#e15b3c')"></li>
             <li><img src="img/thumb3.png" onclick="imgSlider('img/img3.png');changeCircleColor('#8b331f')"></li>
-        </ul> -->
+        </ul>
         <ul class="sci">
             <li><a href="#"><img src="img/facebook.png"></a></li>
             <li><a href="#"><img src="img/twitter.png"></a></li>
@@ -53,7 +91,17 @@
 
         </ul>
           <!--script-link----------->
+          <script type="text/javascript">
+           function imgSlider(bicycle){
+             document.querySelector('.wheels').src = bicycle;
+             }
+           function changeCircleColor(color){
+               const circle = document.querySelector('.circle');
+               circle.style.background = color;
+    }
+</script>         
    
+
 </section>
   <!-- </div> -->
     
@@ -598,17 +646,9 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript">
-    function imgSlider(bicycle){
-        document.querySelector('.wheels').src = bicycle;
-    }
-    function changeCircleColor(color){
-        const circle = document.querySelector('.circle');
-        circle.style.background = color;
-    }
-</script>
+  
 <!-- endoffooter -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
