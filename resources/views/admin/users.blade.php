@@ -39,7 +39,8 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Billing Address</th>
+                    <th>Role</th>
+                    <th>Date Joined</th>
                     <th>Edit</th>
                     <th>Delete</th>
                     
@@ -51,53 +52,42 @@
                   <td>{{ $row->id}}</td>  
                   <td>{{ $row->name}}</td>
                     <td>{{ $row->email}}</td>
-                    <td>Billing Address</td>
+                    <td>
+                      @if($row->is_admin)
+                      Admin
+                      @else
+                      User
+                      @endif
+                      
+                    </td>
+                    <td>{{date("m-d-Y", strtotime($row->created_at))}}</td>
                     <td>
                     <a href="admin/edit/{{ $row->id }}"class="btn btn-primary">Edit</a>
-                    
                     </td>
                     <td>
-                      <form action="admin/role-delete/{{ $row->id }}" method="POST">
+                      @if($row->thrashed())
+                      <form action="admin/role-restore/{{ $row->id }}" method="POST" onsubmit="return confirm('Are you sure you want to re-activate user?')">
                       {{csrf_field()}}
-                      {{ method_field('DELETE')}}
-                    <button type="submit" class="btn btn-danger">DELETE</button>  
-                  </form> 
+                      <input type="hidden" name="id" value = "{{auth()->row()->id}}">
+                      <button type="submit" class="btn btn-success">RESTORE</button>  
+                      @else
+                      <form action="admin/role-delete/{{ $row->id }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                        {{csrf_field()}}
+                        {{ method_field('DELETE')}}
+                        
+                        <button type="submit" class="btn btn-danger">DELETE</button>  
+                      </form>
+                      @endif
                   </td>
-
-
-
-                    <!-- <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td> -->
+                    
                   </tr>
                   @endforeach
-                  
                   </tbody>
-                  <!-- <tfoot>
-                  <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                  </tr>
-                  </tfoot> -->
                 </table>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-
-            
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
-
-
 @endsection

@@ -21,7 +21,7 @@ class AdminController extends Controller
            return view('admin.profile');
        }
        function users(){
-        $users = User::all(); 
+        $users = User::withTrashed()->get(); 
       return view('admin.users')->with('users', $users);
          }
 
@@ -30,18 +30,25 @@ class AdminController extends Controller
             return view('admin.edit')->with('users', $users);
          }
 
-         function destroy($id){
+         public function destroy($id){
             $users = User::findOrFail($id);
             $users->delete();
-            return redirect('admin/users')->with('message', 'Your Data is Deleted');
+            return redirect('admin/users')->with('status', 'Your Data is Deleted');
          }
-         function registerupdate(Request $request, $id){
+         public function registerupdate(Request $request, $id){
             $users = User::findOrFail($id);
             $users->name =$request->input('username');
             $users->is_admin = $request->input('is_admin');
             $users->update();
             return redirect('admin/users')->with('status', 'Your data has been updated');
          }
+
+         public function restore($id)
+    {
+        // Fetch all users ,find the user with id, then restore
+        User::withTrashed()->find($id)->restore();
+        return to_route('admin/users')->with('message', 'User restored');
+    }
     //     public function registerupdate(Request $request, $id)
     // {
     //     $request->validate([
@@ -149,5 +156,6 @@ class AdminController extends Controller
             }
            }
        }
+       
 
 }

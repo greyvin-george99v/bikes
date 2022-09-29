@@ -1,8 +1,7 @@
-@extends('main')
+@extends('layouts.main')
 @section('title', 'WheelsOnBike - Home')
 @section('content')
-<footer class="footer-20192">
-
+  <footer class="footer-20192">
     <div class="site-section">
       <div class="container">
 
@@ -11,8 +10,8 @@
             <h2 class="mb-0">Reach out for more info</h2>
             <h3 class="text-dark">Let's get started!</h3>
           </div>
-          <div class="contactUs">
-            <a href="#" class="btn btn-dark rounded-0 py-3 px-5">Contact us</a>
+          <div class="ml-auto d-flex justify-content-end">
+            <a href="#" class="btn btn-dark rounded-0 py-3 px-5 ">Contact us</a>
           </div>
         </div>
         <div class="row">

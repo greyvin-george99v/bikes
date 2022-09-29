@@ -51,7 +51,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ \URL::to('/')}}" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/wblogo.png" alt="WheelsOn Bike Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">WheelsOnBike</span>
     </a>
 
@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="{{ route('admin.dashboard')}}" class="nav-link {{ (request()->is('admin/dashboard*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
-                    Dashboard
+                  {{ __('Dashboard') }}
                   </p>
                 </a>
               </li>
@@ -86,7 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="{{ route('admin.profile')}}" class="nav-link {{ (request()->is('admin/profile*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
-                   Profile
+                  {{ __('Profile') }}
                   </p>
                 </a>
               </li>
@@ -94,7 +94,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="{{ route('admin.users')}}" class="nav-link {{ (request()->is('admin/users*')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
-              Users
+              {{ __('Users') }}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('orders.index')}}" class="nav-link {{ (request()->is('admin/orders*')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+              {{ __('Orders') }}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('categories.index')}}" class="nav-link {{ (request()->is('admin/categories*')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+              {{ __('Categories') }}
               </p>
             </a>
           </li>

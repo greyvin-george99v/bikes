@@ -37,31 +37,31 @@
               <div class="form-group row">
                   <label for="inputName" class="col-sm-2 col-form-label">First Name</label>
                  <div class="col-sm-10">
-                 <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                 <input type="text" class="form-control" id="inputPassword" placeholder="">
                  </div>
                   </div>
                 <div class="form-group row">
                   <label for="inputName" class="col-sm-2 col-form-label">Second Name</label>
                  <div class="col-sm-10">
-                 <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                 <input type="text" class="form-control" id="inputPassword" placeholder="">
                  </div>
                   </div>
                   <div class="form-group row">
                   <label for="inputPhone" class="col-sm-2 col-form-label">Phone NO.</label>
                  <div class="col-sm-10">
-                 <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                 <input type="text" class="form-control" id="inputPassword" placeholder="">
                  </div>
                   </div>
                   <div class="form-group row">
                   <label for="inputCity" class="col-sm-2 col-form-label">City</label>
                  <div class="col-sm-10">
-                 <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                 <input type="text" class="form-control" id="inputPassword" placeholder="">
                  </div>
                   </div>
                   <div class="form-group row">
                   <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
                  <div class="col-sm-10">
-                 <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                 <input type="text" class="form-control" id="inputPassword" placeholder="">
                  </div>
                   </div>
                   <div class="form-group row">

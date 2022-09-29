@@ -21,6 +21,13 @@ body {
     padding: 0;
    
 }
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+}
   /* background: #6394F8; */
   .btn-1{
     display: flex;
@@ -655,16 +662,12 @@ a{
   font-family: 'Montserrat', sans-serif;
   padding-top: 50px;
 }
-.choose p{
+.chooseBikes p{
   color: black;
-  font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 500px;
 }
-.contactUs{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  float: right;
-}
+
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -683,7 +686,7 @@ a {
 .footer-20192 {
   position: relative;
   color: #fff;
-  padding: 7rem 0;
+  padding: 2rem 0;
   background-color: #141d2a; 
 }
   .footer-20192 .container {

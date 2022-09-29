@@ -38,21 +38,27 @@
     <li><a href="#">Home</a></li>
     <li><a href="#">Bikes &dtrif;</a>
       <ul class="dropdown">
-        <li><a href="#">Men Bikes</a></li>
+        <li><a href="{{url('/allproducts')}}">Men Bikes</a></li>
         <li><a href="#">Women Bikes</a></li>
         <li><a href="#">Kids Bikes</a></li>
-        <li><a href="#">Iconography</a></li>
       </ul>
     </li>
-    <li><a href="#">Work &dtrif;</a>
+    <li><a href="#">Accessories &dtrif;</a>
       <ul class="dropdown">
-        <li><a href="#">Web Development</a></li>
-        <li><a href="#">Web Design</a></li>
-        <li><a href="#">Illustration</a></li>
-        <li><a href="#">Iconography</a></li>
+        <li><a href="#">Jerseys</a></li>
+        <li><a href="#">Helmets</a></li>
+        <li><a href="#">Shorts</a></li>
+        <li><a href="#">Saddles</a></li>
       </ul>
     </li>
+    <li><a href="#">Cycling Events</a></li>
     <li><a href="#">About</a></li>
+    <li><a href="#">Services &dtrif;</a>
+      <ul class="dropdown">
+        <li><a href="#">Bike Fitting</a></li>
+      
+      </ul>
+    </li>
     <li><a href="#">Contact</a></li>
   </ul>
  <div class="btn-1">
@@ -69,7 +75,7 @@
     <div class="circle"></div> 
         <div class="content">
          <div class="textbox">
-            <h2>Don't just ride<br>It's <span>Cycle</span></h2>
+            <h2>Don't just ride<br> <span>Cycle</span></h2>
             <p>Start your journey today through the Mountains, Rivers,<br> Hills, 
                 Streets and Towns using the right cycling Tools <br> and Gears.</p>
             <a href="#">Sign Up</a>
@@ -588,7 +594,7 @@
 
 <!-- footer -->
   
-  <footer class="footer-20192">
+<footer class="footer-20192">
     <div class="site-section">
       <div class="container">
 
@@ -597,8 +603,8 @@
             <h2 class="mb-0">Reach out for more info</h2>
             <h3 class="text-dark">Let's get started!</h3>
           </div>
-          <div class="contactUs">
-            <a href="#" class="btn btn-dark rounded-0 py-3 px-5">Contact us</a>
+          <div class="ml-auto d-flex justify-content-end">
+            <a href="#" class="btn btn-dark rounded-0 py-3 px-5 ">Contact us</a>
           </div>
         </div>
         <div class="row">

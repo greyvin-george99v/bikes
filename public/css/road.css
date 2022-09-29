@@ -9,149 +9,21 @@
 }
 :root {
     --primary-color:grey;
+    
 
 }
-*{
+/* *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 
-}
+} */
 body{
     width: 100vw;
     height: 100vh;
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    float: right;
-    margin-left: 60%;
-  }
-
-.button {
-    appearance: none;
-    background: none;
-    border: none;
-    outline: none;
-  
-    padding: 20px 40px;
-    border-radius: 20px;
-    color: #212121;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0 15px;
-    cursor: pointer;
-    transition: 0.4s;
-  }
-  
-.button-1 {
-    color: #ff822f;
-    border: 3px solid #ff822f;
-  }
-
-.button-1:hover {
-    color: #FFF;
-    background-color: #ff822f;
-  }
-
-section
-{
-    position: relative;
-    width: 100;
-    min-height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url(img/img4.png) repeat !important;
-    background-size: cover;
-}
-.logo{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.register{
-    display: flex;
-    justify-content: space-between;
-    float: right;
-    margin-left: 80%;
-}
-/* Navbar container */
-.navbar {
-    overflow: hidden;
-    background-color: none;
-    font-family: Arial;
-}
-  
-  /* Links inside the navbar */
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: Black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-  
-  /* The dropdown container */
-  .dropdown {
-    float: left;
-    overflow: hidden;
-}
-  
-  /* Dropdown button */
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: black;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
-}
-  
-  
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #ff7518;
-}
-  
-  /* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-  
-  /* Links inside the dropdown */
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-  
-  /* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-}
-.section .all{
-    padding: 10px;
-}
 
 .road{
     width: auto;
@@ -219,30 +91,6 @@ a img {
     border: none;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  padding: 10px;
-}
-footer p {
-  letter-spacing: 3px;
-}
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-}
-footer a:hover {
-  color: #7d7d7d;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-    display: block;
-}
-strong, b {
-    font-weight: bold;
-}
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%}
@@ -6620,6 +6468,8 @@ font-size:16px;
 margin-bottom:20px;
 margin-bottom:15px;
 text-align:justify;
+font-family: 'Montserrat', sans-serif !important;
+fill: red;
 }
 @media screen and (max-width:767px)
 {
@@ -6816,7 +6666,7 @@ img {
 }
 
 button {
-  background: #cda9ac;
+  background: #ff7518 ;
   padding: 10px;
   display: inline-block;
   outline: 0;
@@ -6876,3 +6726,28 @@ button:hover {
   background: #BA7E7E;
   color: #F5F5F5;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    padding: 10px;
+  }
+  footer p {
+    letter-spacing: 3px;
+  }
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: #7d7d7d;
+  }
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+      display: block;
+  }
+  strong, b {
+      font-weight: bold;
+  }
