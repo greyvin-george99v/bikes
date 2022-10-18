@@ -20,6 +20,7 @@
                         <form action="admin/role-update/{{ $users->id}}" method="POST">
                             {{ csrf_field()}}
                             {{ method_field('PUT')}}
+                            
                             <div class="form-group">
                                 <label>Name</label>
                                     <input type="text" name="username" value="{{ $users->name}}" class="form-control">
@@ -34,7 +35,7 @@
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-success">Update</button>
-                            <a href="admin/users" class="btn btn-danger">Cancel</a>
+                            <a href="admin.users" class="btn btn-danger">Cancel</a>
 
                         </form>
                     </div>

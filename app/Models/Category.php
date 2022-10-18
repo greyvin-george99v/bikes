@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','image','slug'];
+    protected $fillable = ['name','image','slug', 'description'];
 
     // Define One to many relationship
     public function products()

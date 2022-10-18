@@ -17,6 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        //Fetch all Categories
         $categories = Category::all();
         return view('admin.categories.index', compact('categories'));   
     }
@@ -39,10 +40,11 @@ class CategoryController extends Controller
      */
     public function store(CategoryStoreRequest $request)
     {
-        // dd('hello');
+        // dd($category);
         $image = $request->file('image')->store('public/categories'); 
         Category::create([
             'name'=> $request->name,
+            'description' => $request->description,
             'image'=>$image
         ]);
 
@@ -88,10 +90,13 @@ class CategoryController extends Controller
             Storage::delete($category->image);
             $image = $request->file('image')->store('public/categories');
         }
+
        
         $category->update([
             'name'=>$request->name,
-            'image'=>$image
+            'image'=>$image,
+            'description' => $request->description,
+            
         ]);
 
         return to_route('categories.index')->with('message','Updated Successfully');

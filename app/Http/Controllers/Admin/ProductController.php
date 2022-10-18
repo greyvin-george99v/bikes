@@ -3,83 +3,92 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductStoreRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Category;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        // Get all products by descending order and paginate the results by 5
+        $products= Product::orderBy('created_at', 'desc')->paginate(5);
+        return view('admin.products.index', compact('products'));  
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        // Compact all categories into the view
+        $categories = Category::all();
+        return view('admin.products.create' , compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        //
+        // Type hinting the request class that contains the validation rules
+        // Store the file in the public/categories directory
+        $image = $request->file('image')->store('public/products');
+        // Store the product into the database
+        Product::create([
+            'name' => $request->name,
+            'description'=>$request->description,
+            'price'=>$request->price,
+            'color'=> $request->color,
+            'grips'=> $request->grips,
+            'frame_size'=> $request->frame_size,
+            'country_registration'=> $request->country_registration,
+            'category_id'=>$request->category_id,
+            'image' => $image,
+        ]);
+
+        return to_route('products.index')->with('message', 'Created Successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function edit(Product $product)
+    { 
+         // Compact all categories into the view
+        $categories = Category::all();
+        return view('admin.products.edit' , compact('product' , 'categories'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request, Product $product)
     {
-        //
+        // Validate the incoming request
+        $request->validate([
+            'name'=>'required',
+        ]);
+        // Get the image
+        $image = $product->image;
+        // Check if the incoming request has a file image then delete if from storage and replace it with   new image
+        if($request->hasFile('image')){
+            Storage::delete($product->image);
+            $image = $request->file('image')->store('public/products');
+        }
+        // Update the corresponding records in the database
+        $product->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'color'=> $request->color,
+            'grips'=> $request->grips,
+            'frame_size'=> $request->frame_size,
+            'country_registration'=> $request->country_registration,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            'image' => $image,
+        ]);
+
+        return to_route('products.index')->with('message', 'Updated Successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function destroy(Product $product)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        // Delete image from storage and product from the database
+        Storage::delete($product->image);
+        $product->delete();
+        return to_route('products.index')->with('message', 'Deleted Successfully');
     }
 }

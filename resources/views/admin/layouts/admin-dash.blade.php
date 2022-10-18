@@ -92,17 +92,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
           <li class="nav-item">
             <a href="{{ route('admin.users')}}" class="nav-link {{ (request()->is('admin/users*')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-cog"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
               {{ __('Users') }}
               </p>
             </a>
           </li>
+        
           <li class="nav-item">
-            <a href="{{ route('orders.index')}}" class="nav-link {{ (request()->is('admin/orders*')) ? 'active' : '' }}">
+            <a href="{{ route('orders.index')}}" class="nav-link {{ (request()->is('admin/orders*')) ? 'active' : '' }}"">
               <i class="nav-icon fas fa-cog"></i>
               <p>
-              {{ __('Orders') }}
+                {{ __('Orders') }}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('orders.index')}}" class="nav-link  {{ (request()->is('admin/orders*')) ? 'active' : '' }}">
+                  <i class="nav-icon far fa-circle "></i>
+                  <p>All Orders</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('products.index')}}" class="nav-link {{ (request()->is('admin/products*')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+              {{ __('Products') }}
               </p>
             </a>
           </li>

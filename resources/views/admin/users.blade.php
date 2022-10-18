@@ -41,43 +41,47 @@
                     <th>Email</th>
                     <th>Role</th>
                     <th>Date Joined</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Action</th>
+                   
                     
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach ($users as $row)
+                    @foreach ($users as $user)
                   <tr>
-                  <td>{{ $row->id}}</td>  
-                  <td>{{ $row->name}}</td>
-                    <td>{{ $row->email}}</td>
+                  <td>{{ $user->id}}</td>  
+                  <td>{{ $user->name}}</td>
+                    <td>{{ $user->email}}</td>
                     <td>
-                      @if($row->is_admin)
+                      @if($user->is_admin)
                       Admin
                       @else
                       User
                       @endif
                       
                     </td>
-                    <td>{{date("m-d-Y", strtotime($row->created_at))}}</td>
+                    <td>{{date("m-d-Y", strtotime($user->created_at))}}</td>
                     <td>
-                    <a href="admin/edit/{{ $row->id }}"class="btn btn-primary">Edit</a>
-                    </td>
-                    <td>
-                      @if($row->thrashed())
-                      <form action="admin/role-restore/{{ $row->id }}" method="POST" onsubmit="return confirm('Are you sure you want to re-activate user?')">
+                      <div class="d-flex">
+                    <a title="Edit" href="admin/edit/{{ $user->id }}"class="btn btn-primary">Edit</a>
+                    &nbsp
+                    
+                      <!-- @if($user->trashed())
+                      <form action="admin/role-restore/{{ $user->id }}" method="POST" onsubmit="return confirm('Are you sure you want to re-activate user?')">
                       {{csrf_field()}}
-                      <input type="hidden" name="id" value = "{{auth()->row()->id}}">
-                      <button type="submit" class="btn btn-success">RESTORE</button>  
-                      @else
-                      <form action="admin/role-delete/{{ $row->id }}" method="POST" onsubmit="return confirm('Are you sure?')">
+                      <input type="hidden" name="id" value = "{{auth()->user()->id}}">
+                      <button title="Restore" type="submit" class="btn btn-success">RESTORE</button> 
+                      </form> -->
+
+                      <!-- @else -->
+                      <form action="admin/role-delete/{{ $user->id }}" method="POST" onsubmit="return confirm('Are you sure?')">
                         {{csrf_field()}}
                         {{ method_field('DELETE')}}
                         
-                        <button type="submit" class="btn btn-danger">DELETE</button>  
+                        <button title="Delete" type="submit" class="btn btn-danger">DELETE</button>  
                       </form>
-                      @endif
+                      <!-- @endif -->
+                      </div>
                   </td>
                     
                   </tr>

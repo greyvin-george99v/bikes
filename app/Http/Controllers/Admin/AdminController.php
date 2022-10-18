@@ -21,20 +21,23 @@ class AdminController extends Controller
            return view('admin.profile');
        }
        function users(){
-        $users = User::withTrashed()->get(); 
+        $users = User::all(); 
       return view('admin.users')->with('users', $users);
-         }
+       }
 
-        function edit(Request $request, $id){
+        public function edit(Request $request, $id){
             $users = User::findOrFail($id);
             return view('admin.edit')->with('users', $users);
          }
 
-         public function destroy($id){
+       
+        
+        public function destroy($id){
             $users = User::findOrFail($id);
             $users->delete();
-            return redirect('admin/users')->with('status', 'Your Data is Deleted');
+            return redirect('admin/users')->with('message', 'Your Data is Deleted');
          }
+    
          public function registerupdate(Request $request, $id){
             $users = User::findOrFail($id);
             $users->name =$request->input('username');
@@ -43,22 +46,7 @@ class AdminController extends Controller
             return redirect('admin/users')->with('status', 'Your data has been updated');
          }
 
-         public function restore($id)
-    {
-        // Fetch all users ,find the user with id, then restore
-        User::withTrashed()->find($id)->restore();
-        return to_route('admin/users')->with('message', 'User restored');
-    }
-    //     public function registerupdate(Request $request, $id)
-    // {
-    //     $request->validate([
-    //         'is_admin'=> 'required',
-    //     ]);
-    //     $user->update([
-    //         'is_admin' => $request->is_admin,
-    //     ]);
-    //     return redirect('/users')->with('status', 'Your data has been updated');
-    // }
+    
 
 
        function updateInfo(Request $request){

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\HomeController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\ProjectController;
@@ -38,13 +39,24 @@ Route::get('/', function () {
 
 // Route::get('/', [HomeController::class, 'index'])->name('home');
 
+//Wheels Site
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/', 'featuredSection')->name('home');
+    Route::get('/shop', 'listProducts')->name('shop');
+    Route::get('/product/{slug}','singleProduct')->name('product');
+    // Search and Filter
+    Route::get('/search', 'search')->name('search');
+    Route::get('/shop/{id}', 'filter')->name('filter');
+    // Route::post('/shop/{id}', 'filter')->name('filter');
+});
+//Admin Routes
 Route::group(['prefix'=>'admin', 'middleware'=>['admin','auth']], function(){
     Route::get('/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::get('profile',[AdminController::class,'profile'])->name('admin.profile');
     Route::get('/users',[AdminController::class,'users'])->name('admin.users');
     Route::get('/edit/{id}',[AdminController::class,'edit'])->name('admin.edit');  
     Route::delete('/role-delete/{id}',[AdminController::class,'destroy'])->name('admin.destroy');  
-    Route::delete('/role-restore/{id}',[AdminController::class,'restore'])->name('admin.restore');  
+    // Route::post('/role-restore/{id}',[AdminController::class,'restore'])->name('admin.restore');  
     Route::put('/role-update/{id}',[AdminController::class, 'registerupdate'])->name('admin.registerupdate');
     Route::resource('/categories',CategoryController::class);
     Route::resource('/products',ProductController::class);
@@ -71,6 +83,7 @@ Route::group(['prefix'=>'user', 'middleware'=>['user','auth']], function(){
     Route::post('change-password',[UserController::class,'changePassword'])->name('userChangePassword');
     
 });
+
 
     // Page Sites Routes
    Route::controller(PageController::class)->group (function(){
