@@ -72,11 +72,11 @@ class ProductController extends Controller
         $product->update([
             'name' => $request->name,
             'description' => $request->description,
+            'price' => $request->price,
             'color'=> $request->color,
             'grips'=> $request->grips,
             'frame_size'=> $request->frame_size,
             'country_registration'=> $request->country_registration,
-            'price' => $request->price,
             'category_id' => $request->category_id,
             'image' => $image,
         ]);

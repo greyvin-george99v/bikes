@@ -598,6 +598,12 @@ header {
 body.no-scroll {
     overflow: hidden;
 }
+.logo{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .logo {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6566,7 +6572,7 @@ margin-bottom:5px;
     width: 600px;
     height: 600px;
     transform: translate(-50%,-50%);
-    margin-left: -100px; /*Half the value of width to center div*/
+    margin-left: -30px; /*Half the value of width to center div*/
     margin-top: -100px; /*Half the value of height to center div*/
     z-index: 200;
   }
@@ -6580,6 +6586,14 @@ margin-bottom:5px;
   }
   #textButton {
     cursor: pointer;
+}
+.cover{
+    position:fixed;
+    z-index:999;
+    width:100%;
+    height:100%;
+    background-color: black;
+    background-color:rgba(0,0,0,.75)
 }
 .container {
   position: relative;

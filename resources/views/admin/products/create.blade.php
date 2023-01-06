@@ -76,6 +76,10 @@
        <label for="name">Frame Size</label>
            <input type="text" class="form-control" id="base-input" name="frame_size" >
         </div>
+        <div class="form-group">
+       <label for="name">Country Registration</label>
+           <input type="text" class="form-control" id="base-input" name="country_registration" >
+        </div>
               <div class="form-group">
        <label for="price">Price</label>
            <input type="text" class="form-control @error('price') border-danger @enderror " name="price" >

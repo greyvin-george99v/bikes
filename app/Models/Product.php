@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name' , 'slug','description','image','price','category_id', 'color', 'grips', 'frame_size', 'country-registration'];
+    protected $fillable = ['name' , 'slug','description','image','price','category_id', 'color', 'grips', 'frame_size', 'country_registration'];
 
     // Inverse relationship
     public function category()

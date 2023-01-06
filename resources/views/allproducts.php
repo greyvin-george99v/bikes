@@ -307,32 +307,37 @@
   </div>
 </div>
 </div>
-<div id="overlay"></div>
-<div id="popup">
+<div div ="cover">
+  <div id="overlay"></div>
+    <div id="popup">
     <!-- <div class="popcontrols"> -->
-    <div class="container">
-    <span id="popupclose">X</span> 
-        <div class="images">
-          <img src="img/roadbikes/RevoltAdvanced2.png" />
-        </div>
-        <div class="slideshow-buttons">
-          <div class="one"></div>
-          <div class="two"></div>
-          <div class="three"></div>
-          <div class="four"></div>
-        </div>
-      
-        <div class="product">
-          <p>Women's Running Shoe</p>
-          <h1>Revolt Advance 2" Full Carbon Frame</h1>
-          <h2>$150</h2>
-          <p class="desc">The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
-          <div class="buttons">
-            <button class="add">Add to Cart</button>
-            <button class="like"><span>♥</span></button>
+      <div class="container">
+      <span id="popupclose">X</span>
+        <div class="open">
+          <div class="images">
+            <img src="img/roadbikes/RevoltAdvanced2.png" />
+          </div>
+          <div class="slideshow-buttons">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+            <div class="four"></div>
+          </div>
+
+          <div class="product">
+            <p>Women's Running Shoe</p>
+            <h1>Revolt Advance 2" Full Carbon Frame</h1>
+            <h2>$150</h2>
+            <p class="desc">The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
+            <div class="buttons">
+              <button class="add">Add to Cart</button>
+              <button class="like"><span>♥</span></button>
+            </div>
+          </div>
+
           </div>
         </div>
-        </div>
+    </div>
     </div>
 </div>
 </section>
@@ -365,12 +370,17 @@ var button = document.getElementById("textButton");
 closePopup.onclick = function() {
 overlay.style.display = 'none';
 popup.style.display = 'none';
+$("#popup").fadeOut(500);
+$("#overlay").fadeOut(500);
 };
 // Show Overlay and Popup
 button.onclick = function() {
 overlay.style.display = 'block';
 popup.style.display = 'block';
-}
+$("#popup").fadeIn(500);
+$("#overlay").fadeTo(500, 0.5);
+};
+
 </script>
 
 <!-- script -->

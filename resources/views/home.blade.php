@@ -68,14 +68,15 @@
 <div class="allBikes-content" style="background-image: url(img/img4.png);">
 <div class="biker">
 <div class="allBikes" >
-  
+ 
     <h2 >{{$category->name}}</h2>
     <p>{{$category->description}}</p>
   </div>
-
+<!-- 
   <section class="slider">
     <ul id="autoWidth" class="cs-hidden">
     <!--1------------------------------------>	
+    
     <li class="item-a">
   <!--box-slider--------------->
     <div class="box">
@@ -218,36 +219,36 @@
   <h2 >MEN BIKES</h2>
   <p>You never outgrow fun. That’s why we have quality men’s bikes to fuel your youthful spirit.<BR> Men’s mountain bikes are perfect for trails. Or, grab a cruiser for a ride through the neighborhood and into town.<br> Get the best Men bikes in Kenya with affordable Prices.</p>
 </div>
-  <section class="slider">
+   <section class="slider">
     <ul id="AutoWidth" class="cs-hidden">
-    <!--1------------------------------------>	
+
     <li class="item-a">
-  <!--box-slider--------------->
+ 
     <div class="box">
-    <!--img-box---------->
+
     <div class="slide-img">
     <img alt="1" src="img/kid1.jpg">
-    <!--overlayer---------->
+
     <div class="overlay">
-    <!--buy-btn------>	
+    
     <a href="#" class="buy-btn">Buy Now</a>	
     </div>
     </div>
-    <!--detail-box--------->
+  
     <div class="detail-box">
-    <!--type-------->
+
     <div class="type">
     <a href="#">Rabbed Cardigan</a>
     <span>Noe Arrival</span>
     </div>
-    <!--price-------->
+    
     <a href="#" class="price">$23</a>
       
     </div>
     
     </div>		
   </li>
-    <!--2------------------------------------>	
+
     <li class="item-b">
     <div class="box">
     <div class="slide-img">
@@ -272,7 +273,7 @@
     
     </div>		
   </li>
-    <!--3------------------------------------>	
+ 
     <li class="item-c">
     <div class="box">
     <div class="slide-img">
@@ -293,7 +294,7 @@
     
     </div>		
   </li>
-    <!--4------------------------------------>	
+    
     <li class="item-d">  
     <div class="box">
     <div class="slide-img">
@@ -304,17 +305,17 @@
     </div>
     
     <div class="detail-box">
-    <!--type-------->
+
     <div class="type">
     <a href="#">Rabbed Cardigan</a>
     <span>Noe Arrival</span>
     </div>
-    <!--price-------->
+
     <a href="#" class="price">$27</a> 
     </div>  
     </div>		
   </li>
-    <!--5------------------------------------>	
+   
     <li class="item-e">
     <div class="box">
     <div class="slide-img">
@@ -334,7 +335,7 @@
     
     </div>		
   </li>
-    <!--6------------------------------------>	
+
     <li class="item-f">
     <div class="box">
     <div class="slide-img">
@@ -365,34 +366,34 @@
 </div>
   <section class="slider">
     <ul id="Autowidth" class="cs-hidden">
-    <!--1------------------------------------>	
+   	
     <li class="item-a">
-  <!--box-slider--------------->
+  
     <div class="box">
-    <!--img-box---------->
+  
     <div class="slide-img">
     <img alt="1" src="img/kid1.jpg">
-    <!--overlayer---------->
+
     <div class="overlay">
-    <!--buy-btn------>	
+   
     <a href="#" class="buy-btn">Buy Now</a>	
     </div>
     </div>
-    <!--detail-box--------->
+   
     <div class="detail-box">
-    <!--type-------->
+
     <div class="type">
     <a href="#">Rabbed Cardigan</a>
     <span>Noe Arrival</span>
     </div>
-    <!--price-------->
+
     <a href="#" class="price">$23</a>
       
     </div>
     
     </div>		
   </li>
-    <!--2------------------------------------>	
+
     <li class="item-b">
     <div class="box">
     <div class="slide-img">
@@ -417,7 +418,7 @@
     
     </div>		
   </li>
-    <!--3------------------------------------>	
+
     <li class="item-c">
     <div class="box">
     <div class="slide-img">
@@ -438,7 +439,7 @@
     
     </div>		
   </li>
-    <!--4------------------------------------>	
+    
     <li class="item-d">  
     <div class="box">
     <div class="slide-img">
@@ -449,17 +450,17 @@
     </div>
     
     <div class="detail-box">
-    <!--type-------->
+   
     <div class="type">
     <a href="#">Rabbed Cardigan</a>
     <span>Noe Arrival</span>
     </div>
-    <!--price-------->
+ 
     <a href="#" class="price">$27</a> 
     </div>  
     </div>		
   </li>
-    <!--5------------------------------------>	
+	
     <li class="item-e">
     <div class="box">
     <div class="slide-img">
@@ -479,7 +480,7 @@
     
     </div>		
   </li>
-    <!--6------------------------------------>	
+
     <li class="item-f">
     <div class="box">
     <div class="slide-img">
@@ -501,8 +502,8 @@
     
     
 </ul>
-  </section>  
-</div>
+  </section>   -->
+</div> -->
 </div>
 
 <div class="choose" style="background-image: url(img/choose.jpg);">

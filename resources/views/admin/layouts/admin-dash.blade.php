@@ -17,6 +17,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
    <link rel="stylesheet" href="{{ asset('plugins/ijaboCropTool/ijaboCropTool.min.css') }}">
+   <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
@@ -174,6 +177,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('plugins/ijaboCropTool/ijaboCropTool.min.js') }}"></script>
+<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+
+     
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 
@@ -185,6 +193,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
        'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
      }
   });
+  $(document).ready( function () {
+        // alert('hello');
+          $('#myTable').DataTable({
+            "pageLength": 100,
+          "responsive": true,
+          "autoWidth": false,
+          });
+      });
   
   $(function(){
 

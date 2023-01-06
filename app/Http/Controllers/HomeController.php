@@ -24,7 +24,7 @@ class HomeController extends Controller
     
         public function featuredSection()
         {
-            // Fetch latest 4 categories 
+            // Fetch latest 3 categories 
             $categories = Category::all()->take(3)->sortByDesc('created_at');
             // Take latest 6 products
             $products = Product::all()->take(6)->sortByDesc('created_at');

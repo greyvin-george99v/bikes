@@ -67,19 +67,22 @@
                     </div>  
                     <div class="form-group">
        <label for="name">Color</label>
-           <input type="text" class="form-control" id="base-input" name="color" >
+           <input type="text" class="form-control" id="base-input" name="color"  value="{{$product->color}}" >
         </div>
         <div class="form-group">
        <label for="name">Grips</label>
-           <input type="text" class="form-control" id="base-input" name="grips" >
+           <input type="text" class="form-control" id="base-input" name="grips"  value="{{$product->grips}}">
         </div>
         <div class="form-group">
        <label for="name">Frame Size</label>
-           <input type="text" class="form-control" id="base-input" name="frame_size" >
+           <input type="text" class="form-control" id="base-input" name="frame_size" value="{{$product->frame_size}}" >
+        </div>
+        <label for="name">Country Registration</label>
+           <input type="text" class="form-control" id="base-input" name="country_registration" value="{{$product->country_registration}}">
         </div>
         <div class="form-group">
        <label for="price">Price</label>
-        <input type="text" class="form-control @error('price') border-danger @enderror " name="price" value="{{$product->price}}" >
+        <input type="text" class="form-control" name="price" value="{{$product->price}}" >
          @error('price')
         <div class="text-danger">{{ $message }}</div>
          @enderror
@@ -102,12 +105,12 @@
       </div>
        </div>
          </div>
-       </div>
-       <div class="card-footer">
+         <div class="card-footer">
        <button type="submit" class="btn btn-primary">Update Product</button>
-
-                </div>
-                </div>
+      </div>
+       </div>
+       
+       </div>
 </form>
 </section>
 @endsection('content')

@@ -45,7 +45,7 @@
                   <tr>
                   <td>
                   <a href="{{route('admin.orders.show', $order->id)}}">
-                    <h5>#{{$order->id}} by <br> {{$order->customers->firstname}} {{$order->customers->lastname}} </h5>
+                    <h5>{{$order->id}} by <br> {{$order->customers->firstname}} {{$order->customers->lastname}} </h5>
                   </a>
                   </td>  
                   <!-- <a href="admin/orders/show/{{ $order->id }}"></a> -->
