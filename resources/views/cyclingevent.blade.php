@@ -53,11 +53,11 @@
         <li><a href="#">Saddles</a></li>
       </ul>
     </li>
-    <li><a href="{{route('/cyclingevent')}}">Cycling Events</a></li>
+    <li><a href="#">Cycling Events</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Services &dtrif;</a>
       <ul class="dropdown">
-        <li><a href="{{url('/bikefitting')}}">Bike Fitting</a></li>
+        <li><a href="#">Bike Fitting</a></li>
       
       </ul>
     </li>

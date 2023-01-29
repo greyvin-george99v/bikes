@@ -29,9 +29,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Route::get('/about', function () {
-//     return view('allproducts');
-// });
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -41,12 +39,17 @@ Route::get('/', function () {
 
 //Wheels Site
 Route::controller(HomeController::class)->group(function(){
+    Route::get('/cyclingevent', 'cycle')->name('cyclingevent');
+    Route::get('/allproducts', 'index')->name('allproducts');
+    Route::get('/bikefitting', 'fitting')->name('bikefitting');
+
     Route::get('/', 'featuredSection')->name('home');
     Route::get('/shop', 'listProducts')->name('shop');
     Route::get('/product/{slug}','singleProduct')->name('product');
     // Search and Filter
     Route::get('/search', 'search')->name('search');
     Route::get('/shop/{id}', 'filter')->name('filter');
+
     // Route::post('/shop/{id}', 'filter')->name('filter');
 });
 //Admin Routes
@@ -87,7 +90,10 @@ Route::group(['prefix'=>'user', 'middleware'=>['user','auth']], function(){
 
     // Page Sites Routes
    Route::controller(PageController::class)->group (function(){
-    Route::get('/allproducts', 'index')->name('allproducts');
+    // Route::get('/cycling-event', 'cycle')->name('cycling-event');
+    // Route::get('/bike-fitting', 'fitting')->name('bike-fitting');
+   
+
    });
 
 

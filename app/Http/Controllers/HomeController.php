@@ -51,6 +51,19 @@ class HomeController extends Controller
             $products = $products->paginate(5);
             return view('search',compact('products'));
         }
+        public function index()
+        {
+                return view('allproducts');
+        }
+
+        public function cycle()
+        {
+                return view('cyclingevent');
+        }
+        public function fitting()
+        {
+            return view ('bikefitting');
+        } 
     
         public function filter(Request $request, $id)
         {

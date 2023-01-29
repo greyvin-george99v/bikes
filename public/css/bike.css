@@ -1,0 +1,140 @@
+@import url("@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800&display=swap');");
+    html, body, div, span, applet, object, iframe, h1, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+:root {
+    --primary-color:grey;
+    
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.road{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 50%;
+    padding: 10px 10px;
+    /* position: absolute; */
+    color: black;
+    background-image: url(../img/orangebike.jpg);
+    /* background-size: 100px 100px; */
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    
+}
+
+.roadbikes{
+    height: 75%;
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    /* margin-left: 150px; */
+    color: white;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px, rgba(45, 55, 68, 0.3);
+}
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', serif !important;
+    font-size: 20px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    margin-bottom: 30px;
+    margin-top: 10px;
+    color: white !important;
+    text-align: center;
+}
+.road p{
+  
+    font-size: 20px !important;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat';font-size: 22px;
+ }
+
+
+.wrapper{
+    margin: 150px auto;
+    width: 80%;
+   
+}
+.text-box h3
+{
+    
+    font-size: 25px;
+    font-weight: 800;
+    font-family: 'Montserrat'; 
+    color: #9d4409;
+}
+
+img
+{
+    max-width: 510px;
+    max-height: 350px;
+    float: right;
+    border: 3px;
+    border-radius: 10px;
+    box-shadow: 30px 30px 20px rgb(244, 178, 128);
+    margin-right: 75px;
+    margin-top: -75px;
+  
+
+
+} 
+.text-box p{
+    font-size: 20px;
+    font-family: 'Montserrat';
+    padding-top: 20px;
+
+
+}
+
+.text-box
+{
+    max-width: 60%;
+}
+
+/* .fit
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9d4409;
+} */
+
+.fit1
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  
+    
+}
