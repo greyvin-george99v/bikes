@@ -1,43 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@font-face {
-    font-family: bikefont;
-    src: url(./fonts/bikefont.otf);
-  }
-:root {
-    --primary-color:grey;
+<ul class="mr-auto"> <!-- A) Fix for white space -->
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-5">
+          <div class="dropdown custom-dropdown">
+            <a href="#" data-toggle="dropdown" class="d-flex align-items-center dropdown-link text-left" aria-haspopup="true" aria-expanded="false" data-offset="0, 20">
+              <div class="profile-pic mr-5">
+                <img src="img/person_2.jpg" alt="Image">
+              </div>
+              <div class="profile-info">
+                <h3>@guest
+                            Guest
+                       @endguest
+                       @auth
+                        {{auth()->user()->name}}   
+                       @endauth </h3>
+                <span>Account</span>
+              </div>
 
+
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+              <a class="dropdown-item" href="#"> <span class="fa fa-user" aria-hidden="true"></span> User Dashboard</a>
+              <a class="dropdown-item" href="#"><span class="icon icon-mail_outline"></span>Orders <span class="number">3</span></a>
+              <!-- <a class="dropdown-item" href="#"><span class="icon icon-people"></span>Following</a>
+              <a class="dropdown-item" href="#"><span class="icon icon-cog"></span>Setting<span>New</span></a> -->
+              
+             @if (Auth::user())
+              <form action="{{route('logout')}}" method="POST">
+              @csrf
+              <a class="dropdown-item" href="{{route('logout')}}"  onclick="event.preventDefault();
+                                                this.closest('form').submit();"><span  class="fa fa-sign-out" aria-hidden="true"></span type="submit">Log out</a>
+              
+              @else   
+              <a href="{{route('login')}}" class="focus:font-bold"><li class="py-2 border-b border-white">
+                  <svg aria-hidden="true" class="inline mr-1 flex-shrink-0 w-6 h-6 text-rose-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path></svg>
+                  Sign In
+                </li></a>
+                @endif
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ul>
+
+
+  <style>
+    
 }
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  font: 14px/22px "Lato", Arial, sans-serif;
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: visible;
-    vertical-align: baseline;
-
-   
-}
-*{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-
-}
-.hero{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
   /* background: #6394F8; */
   .btn-1{
     display: flex;
@@ -823,7 +833,7 @@ a {
   background-color: #141d2a; 
 }
   .footer-20192 .container {
-    position: absolute; 
+    position: relative; 
   }
   .footer-20192 h3 {
     font-size: 16px;
@@ -888,3 +898,5 @@ a {
     .footer-20192 .cta h3 {
       font-size: 20px;
   }
+
+  </style>
