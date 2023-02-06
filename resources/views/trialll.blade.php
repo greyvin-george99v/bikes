@@ -1298,6 +1298,28 @@
       }
     })
   })
+  @foreach ($categoriesRemain as $category)
+@foreach ($category->products as product) 
+<h1>{{$product->name}}</h1>
+@endforeach
+
+
+{{-- Products start --}}
+    <div class="gallery">
+      @foreach($products as product)
+      <div class="display1">
+        
+       <a href="{{route('product' ,$product->slug )}}"></a>
+      <img src="{{Storage::url($product->image)}}" class="card-img-top" alt="{{ product->image }}">
+        <h3>{{$product->name}}</h3>
+        <h6>Ksh {{(int)$product->price}}</h6>
+        <button class="buttonBike">Buy Now</button>
+
+      </div>
+      @endforeach
+      </div>
+      {{-- Products end --}} -->
+
 </script>
 </body>
 </html>

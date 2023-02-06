@@ -24,11 +24,21 @@ class HomeController extends Controller
     
         public function featuredSection()
         {
+            
             // Fetch latest 3 categories 
-            $categories = Category::all()->take(3)->sortByDesc('created_at');
+            $categoriesGrid = Category::all()->take(3)->sortByDesc('created_at');
+            $categoriesKids = Category::all()->skip(3)->take(1)->sortByDesc('created_at');
+            $categoriesMen = Category::all()->skip(4)->take(1)->sortByDesc('created_at');
+            $categoriesParts = Category::all()->skip(5)->take(1)->sortByDesc('created_at');
+            $navCategories = Category::all()->sortByDesc('created_at');
+            dd ($navCategories);
+            
+
             // Take latest 6 products
             $products = Product::all()->take(6)->sortByDesc('created_at');
-            return view('home', compact('products', 'categories'));
+            return view('home', compact('products', 'categoriesGrid','categoriesKids', 'categoriesMen','categoriesParts', 'navCategories'));
+            
+            
         }
     
         public function listProducts()

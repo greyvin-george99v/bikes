@@ -21,6 +21,7 @@ body {
     box-sizing: border-box;
     overflow: visible;
     vertical-align: baseline;
+    font-family: sans-serif;
 
    
 }
@@ -238,9 +239,10 @@ section
 {
     position: relative;
     width: 100;
-    min-height: 100vh;
-    padding: 100px;
-    padding-top: 30px;
+    padding: 50px;
+    margin: 10px auto;
+
+    padding-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -263,7 +265,11 @@ section
     justify-content: center;
     align-items: center;
 }
-
+.text-box
+{
+  margin: 0;
+  left: -40%;
+}
 
 .content
 {
@@ -272,29 +278,35 @@ section
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
 }
 
 .content .textbox
 {
+
+    
     position: relative;
     max-width: 600px;
+    left: -60px;
     
 }
 
+
 .content .textbox h2
-{
-    font-size: 3em;
+{ 
     font-size: 4em;
+    /* color: rgb(211, 12, 12); */
+    color:#000 !important;
     line-height: 1.4em;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .content .textbox h2 span
 {
     color: #ff7518;
     font-size: 1.2em;
-    font-weight: 500;
-    /* font-family: bikefont; */
+    font-weight: 900;
+    font-family: bikefont;
 
 }
 
@@ -313,7 +325,7 @@ section
 
 .content .imgBox
 {
-    width: 500px;
+    width: 600px;
     display: flex;
     justify-content: flex-end;
     padding-right: 50px;
@@ -343,7 +355,7 @@ section
 {
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 10px;
     cursor: pointer;
     transition: 0.5s;
 
@@ -364,8 +376,8 @@ section
 .sci
 {
     position: relative;
-    top: 30px;
-    left: 90px;
+    top: 50%;
+    right: 160px;
     transform: translateY(-50%);
     display: flex;
     justify-content: center;
@@ -382,8 +394,9 @@ section
 .sci li a
 {
     display: inline-block;
-    margin: 5px 0;
+    margin: 25px 0;
     transform: scale(0.6);
+    
 }
 .circle
 {
@@ -406,6 +419,7 @@ a{
     font-size: 60px;
     line-height: 1.2;
     margin-bottom: 15px;
+    font-family: "Montserrat" !important;
 }
 .title{
     display: grid;
@@ -415,9 +429,8 @@ a{
 .bike{
     display: flex;
     justify-content: center;
-    margin: 10px;
+    /* margin: 10px; */
     padding: 10px;
-    
     background-size: cover;
     
 }
@@ -451,7 +464,9 @@ a{
 .allBikes h2{
     display: flex;
     width: 100%;
-    color: #ff7518;
+    color: #b44f0c !important;
+    font-weight: 600;
+   
     justify-content: center;
     align-items:center;
     text-align: center;
@@ -472,6 +487,94 @@ a{
 a{
 	text-decoration:none;
 }
+.display1
+{
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+  0 10px 10px rgba(0,0,0,0.22);
+  transition: 3s;
+  background: white;
+}
+
+.gallery
+{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+
+
+.display1 h3
+{
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+  padding-top: 10px;
+  font-family: 'Montserrat' !important;
+}
+
+.display1 a
+{
+  text-decoration: none;
+}
+
+.display1:hover
+{
+  box-shadow: 0 30px 6px rgba(0,0,0,0.16),
+  0 3px 6px rgba(0,0,0,0.23);
+  transform: translate(0px, -8px);
+}
+
+
+
+.display1 h6
+{
+  font-size: 18px;
+  text-align: center;
+  color: grey;
+  margin: 0;
+}
+
+.display1 img
+{
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  margin: 0 auto; 
+  display: block;
+}
+.display1 button
+{
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.buttonBike
+{
+  background: #ff7518 ;
+}
+
+
 
 
 .boxed{
@@ -781,10 +884,11 @@ a{
   left: 50%;
   width: 100%;
   height: 100%;
-  max-height: 400px;
+  max-height: 300px;
   display: flex;
   justify-content: center;
   align-content: center;
+  margin: 30px auto;
 }
 .chooseBikes{
   text-align: center;
@@ -792,19 +896,20 @@ a{
 .choose, h1{
   /* color: red; */
   /* font-size: medium; */
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 30px;
   padding-top: 50px;
+  font-weight: 800px;
 }
 .chooseBikes p{
   color: black;
-  font-size: 1.5em;
-  font-weight: 500px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif !important;
+  padding-top: 20px;
+
 }
 
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 
 a {
   -webkit-transition: .3s all ease;
@@ -813,8 +918,6 @@ a {
   a, a:hover {
     text-decoration: none !important; }
 
-.content {
-  height: 70vh; }
 
 .footer-20192 {
   position: relative;
@@ -824,6 +927,10 @@ a {
 }
   .footer-20192 .container {
     position: absolute; 
+    background-color: #141d2a; 
+    max-width: 100%;
+
+
   }
   .footer-20192 h3 {
     font-size: 16px;
@@ -880,7 +987,8 @@ a {
     padding: 20px;
     background-color: #ff822f;
     top: -150px;
-    position: relative; 
+    position: relative;
+    margin: 0 auto; 
   }
     .footer-20192 .cta h2, .footer-20192 .cta h3 {
       line-height: 1.5; 

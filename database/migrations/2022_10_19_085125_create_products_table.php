@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('frame_size');
             $table->string('country_registration');
             $table->string('image');
-            $table->decimal('price',9,2);
+            $table->decimal('price',6,2);
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

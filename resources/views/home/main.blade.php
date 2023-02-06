@@ -8,8 +8,11 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.png ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="css/icomoon.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
     <meta name="format-detection" content="telephone=no">
@@ -17,6 +20,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/road.css"> -->
     <link rel="stylesheet" type="text/css" href="css/bike.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <link rel="stylesheet" type="text/css" href="css/lightslider.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/lightslider.js"></script>
@@ -26,10 +30,9 @@
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/nice-select.css">
     <!-- <link rel="stylesheet" type="text/css" href="{{url('css/road.css')}}"> -->
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{url('css/lightslider.css')}}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-
+    @vite(['resources/css/app.css', 'resources/js/app.js' , 'resources/js/custom.js'])
 
     <title>Wheels on Bike</title>
 </head>
@@ -42,7 +45,8 @@
     
   </div>
   <ul>
-    <li><a href="#">Home</a></li>
+    @foreach($navCategories as $category)
+    <li><a href="{{route('allproducts.index',['category'=> $category->name])}}">{{$category->name}}</a></li>
     <li><a href="#">Bikes &dtrif;</a>
       <ul class="dropdown">
         <li><a href="#">Men Bikes</a></li>
@@ -50,7 +54,7 @@
         <li><a href="#">Kids Bikes</a></li>
       </ul>
     </li>
-    <li><a href="#">Accessories &dtrif;</a>
+    <li><a href="#"> Accessories &dtrif;</a>
       <ul class="dropdown">
         <li><a href="#">Jerseys</a></li>
         <li><a href="#">Helmets</a></li>
@@ -67,6 +71,7 @@
       </ul>
     </li>
     <li><a href="#">Contact</a></li>
+    @endforeach
   </ul>
  <!-- <div class="btn-1">
       <button class="button button-1">Login</button>
@@ -125,7 +130,7 @@
     <div class="circle"></div> 
         <div class="content">
          <div class="textbox">
-            <h2>Don't just ride<br> <span>Cycle</span></h2>
+            <h2>Don't just ride<br>It's<span>Cycling</span></h2>
             <p>Start your journey today through the Mountains, Rivers,<br> Hills, 
                 Streets and Towns using the right cycling Tools <br> and Gears.</p>
             <a href="#">Sign Up</a>
@@ -146,8 +151,86 @@
 
 
         </ul>
-          <!--script-link----------->
-          <script type="text/javascript">
+       
+</section>
+
+    <!--Content-->
+ @yield('content')
+
+ <div class="choose" style="background-image: url(img/choose.jpg);">
+  <div class="chooseBikes">
+    <h1>CHOOSE YOUR FAVORITE BIKE</h1>
+    <p>We offer different types of bikes such as MOUNTAIN BIKES and ROAD BIKES.<br> Choose from different makes and sizes that are available.Brand new,Second hands,<br> Ex-UK’s & USA’s and local used bikes.</p>
+  </div>
+</div> 
+<!-- <div class="content d-flex align-items-center bg-light">
+      <h2 class="w-100 text-center">Footer #1</h2>
+    </div> -->
+ 
+    <footer class="footer-20192">
+      <div class="site-section">
+        <div class="container">
+
+          <div class="cta d-block d-md-flex align-items-center px-5">
+            <div>
+              <h2 class="mb-0">Ready for your New Bike?</h2>
+              <h3 class="text-dark">Let's get started!</h3>
+            </div>
+            <div class="ml-auto">
+              <a href="#" class="btn btn-dark rounded-0 py-3 px-5">Contact us</a>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm">
+              <a href="#" class="footer-logo">Wheels On Bike </a>
+              <p class="copyright">
+                <small>&copy; 2023</small>
+              </p>
+            </div>
+            <div class="col-sm">
+              <h3>Customers</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Buyer</a></li>
+                <li><a href="#">Supplier</a></li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Company</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact us</a></li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Further Information</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h3>Follow us</h3>
+              <ul class="list-unstyled social">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-medium"></span></a></li>
+                <li><a href="#"><span class="icon-paper-plane"></span></a></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+
+
+
+   <!--script-link----------->
+   <script type="text/javascript">
            function imgSlider(bicycle){
              document.querySelector('.wheels').src = bicycle;
              }
@@ -157,8 +240,6 @@
     }
 </script>         
  
-</section>
-
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 

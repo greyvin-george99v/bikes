@@ -129,7 +129,7 @@ body {
     display: none;
 }
 button, input[type="button"], input[type="submit"] {
-    -webkit-appearance: button;
+    /* -webkit-appearance: button; */
     cursor: pointer;
     font-family: "Roboto Condensed", sans-serif;
 }
